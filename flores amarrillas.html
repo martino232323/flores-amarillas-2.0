@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas 💛</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1d1d1d 0%, #2c2c2c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        /* Contenedor del Ramo */
+        .bouquet {
+            position: relative;
+            width: 250px;
+            height: 350px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Tallo */
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 8px;
+            height: 200px;
+            background: #2e7d32;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        /* Flores */
+        .flower {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            animation: pulseFlower 2s infinite alternate;
+        }
+
+        .flower-1 { top: 20px; left: 85px; }
+        .flower-2 { top: 60px; left: 15px; }
+        .flower-3 { top: 60px; left: 155px; }
+        .flower-4 { top: 110px; left: 60px; }
+        .flower-5 { top: 110px; left: 110px; }
+
+        /* Pétalos */
+        .petal {
+            position: absolute;
+            width: 30px;
+            height: 45px;
+            background: #ffeb3b;
+            border-radius: 50% 50% 50% 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: center bottom;
+            box-shadow: 0 0 5px rgba(255, 235, 59, 0.6);
+        }
+
+        .petal:nth-child(1) { transform: translate(-50%, -100%) rotate(0deg); }
+        .petal:nth-child(2) { transform: translate(-50%, -100%) rotate(45deg); }
+        .petal:nth-child(3) { transform: translate(-50%, -100%) rotate(90deg); }
+        .petal:nth-child(4) { transform: translate(-50%, -100%) rotate(135deg); }
+        .petal:nth-child(5) { transform: translate(-50%, -100%) rotate(180deg); }
+        .petal:nth-child(6) { transform: translate(-50%, -100%) rotate(225deg); }
+        .petal:nth-child(7) { transform: translate(-50%, -100%) rotate(270deg); }
+        .petal:nth-child(8) { transform: translate(-50%, -100%) rotate(315deg); }
+
+        /* Centro de la flor */
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background: #795548;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 0 5px #3e2723;
+            z-index: 2;
+        }
+
+        /* Lazito o envoltura */
+        .ribbon {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+            background: #ff4081;
+            border-radius: 10px;
+            z-index: 5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Animaciones */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulseFlower {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pétalos cayendo de fondo */
+        .falling-petal {
+            position: absolute;
+            width: 15px;
+            height: 25px;
+            background: #ffeb3b;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Para ti, con mucho cariño 💛</h1>
+    <p>Unas flores amarillas que nunca se marchitan :) </p>
+
+    <!-- Ramo de flores -->
+    <div class="bouquet">
+        <div class="stem"></div>
+        <div class="ribbon"></div>
+
+        <!-- Flor 1 -->
+        <div class="flower flower-1">
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <!-- Flor 2 -->
+        <div class="flower flower-2">
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <!-- Flor 3 -->
+        <div class="flower flower-3">
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <!-- Flor 4 -->
+        <div class="flower flower-4">
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <!-- Flor 5 -->
+        <div class="flower flower-5">
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <!-- Script para generar pétalos cayendo dinámicamente -->
+    <script>
+        function createFallingPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('falling-petal');
+            petal.style.left = Math.random() * window.innerWidth + 'px';
+            petal.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            petal.style.opacity = Math.random();
+            petal.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+            
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 6000);
+        }
+
+        setInterval(createFallingPetal, 300);
+    </script>
+</body>
+</html>
+
+<body>
+    <p>i love you forever</p>
+</body>
